@@ -1,5 +1,7 @@
 package simple_go_distelli
 
+import "github.com/stretchr/testify/assert"
+
 type SimpleStruct struct {
 	FirstName     	string		`json:"firstName" bson:"firstName"`
 	LastName	string		`json:"lastName" bson:"lastName"`
@@ -9,4 +11,8 @@ type SimpleStruct struct {
 	Username	string		`json:"username" bson:"username"`
 	DisplayUsername	string		`json:"displayUsername" bson:"displayUsername"`
 
+}
+
+func (s SimpleStruct) TestFunc(err error){
+	assert.NotNil(nil, err, "dummy assertion")
 }
